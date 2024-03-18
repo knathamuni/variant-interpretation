@@ -162,7 +162,7 @@ task subsetPositionsVCF{
         docker: docker
     }
 }
-
+#adding to push to github
 task mergeVCF{
     input{
         Array [File] input_vcfs
