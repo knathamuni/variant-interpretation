@@ -5,7 +5,6 @@ version 1.0
 
 import "Structs.wdl"
 
-
 struct RuntimeAttr {
     Float? mem_gb
     Int? cpu
@@ -14,7 +13,6 @@ struct RuntimeAttr {
     Int? preemptible
     Int? max_retries
 }
-
 
 workflow relatedness {
 
@@ -173,8 +171,6 @@ task subsetPositionsVCF{
         docker: docker
     }
 }
-#adding to push to github
-#another edit
 
 task mergeVCF{
     input{
