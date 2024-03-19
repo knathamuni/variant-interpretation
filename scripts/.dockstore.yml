@@ -1,0 +1,3 @@
+  - name: variant-interpretation
+    subclass: WDL
+    primaryDescriptorPath: /wdl/Relatedness.wdl
