@@ -99,7 +99,8 @@ task runDeNovo{
         RuntimeAttr? runtime_attr_override
     }
 
-    Float input_size = size(select_all([vcf_input, ped_input, disorder_input, coverage_indeces, raw_proband, raw_parents, exclude_regions, batch_bincov_index, sample_batches]), "GB")
+    #Float input_size = size(select_all([vcf_input, ped_input, disorder_input, coverage_indeces, raw_proband, raw_parents, exclude_regions, batch_bincov_index, sample_batches]), "GB")
+    Float input_size = 100
     Float bed_size = size(bed_input, "GB")
     Float base_mem_gb = 3.75
 
