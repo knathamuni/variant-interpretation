@@ -159,7 +159,7 @@ workflow deNovoSV {
                 sample_batches = sample_batches,
                 batch_bincov_index = select_first([getBatchedFiles.batch_bincov_index_subset, batch_bincov_index]),
                 python_config=python_config,
-                variant_interpretation_docker=variant_interpretation_docker,
+                variant_interpretation_docker = variant_interpretation_docker,
                 runtime_attr_denovo = runtime_attr_denovo,
                 runtime_attr_vcf_to_bed = runtime_attr_vcf_to_bed
         }
