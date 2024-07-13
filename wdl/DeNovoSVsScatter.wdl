@@ -23,7 +23,7 @@ workflow deNovoSVsScatter {
         RuntimeAttr? runtime_attr_merge_bed
     }
     
-    Array[String] coverage_index_files = transpose(read_tsv(batch_bincov_index))[2]
+    #Array[String] coverage_index_files = transpose(read_tsv(batch_bincov_index))[2]
 
     # Scatter genotyping over shards
     scatter ( shard in vcf_files ) {
@@ -46,7 +46,7 @@ workflow deNovoSVsScatter {
                 raw_depth_proband=raw_depth_proband,
                 raw_depth_parents=raw_depth_parents,
                 exclude_regions = exclude_regions,
-                coverage_indeces = coverage_index_files,
+                #coverage_indeces = coverage_index_files,
                 sample_batches = sample_batches,
                 batch_bincov_index = batch_bincov_index,
                 python_config=python_config,
@@ -91,7 +91,7 @@ task runDeNovo{
         File raw_depth_proband
         File raw_depth_parents
         File exclude_regions
-        Array[File] coverage_indeces
+        #Array[File] coverage_indeces
         File batch_bincov_index
         File sample_batches
         File python_config
@@ -99,8 +99,8 @@ task runDeNovo{
         RuntimeAttr? runtime_attr_override
     }
 
-    #Float input_size = size(select_all([vcf_input, ped_input, disorder_input, coverage_indeces, raw_proband, raw_parents, exclude_regions, batch_bincov_index, sample_batches]), "GB")
-    Float input_size = 100
+    Float input_size = size(select_all([vcf_input, ped_input, disorder_input, raw_proband, raw_parents, exclude_regions, batch_bincov_index, sample_batches]), "GB")
+    #Float input_size = 100
     Float bed_size = size(bed_input, "GB")
     Float base_mem_gb = 3.75
 
