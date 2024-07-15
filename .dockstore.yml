@@ -1,3 +1,7 @@
   - name: variant-interpretation
     subclass: WDL
     primaryDescriptorPath: /wdl/Relatedness.wdl
+
+  - name: variant-interpretation
+    subclass: WDL
+    primaryDescriptorPath: /wdl/RunDeNovoSVs.wdl
