@@ -1,3 +1,6 @@
+version: 1.2
+workflows:
+
   - name: variant-interpretation
     subclass: WDL
     primaryDescriptorPath: /wdl/Relatedness.wdl
