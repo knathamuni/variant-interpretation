@@ -1,14 +1,14 @@
 version: 1.2
 workflows:
 
-  - name: variant-interpretation
+  - name: Relatedness
     subclass: WDL
     primaryDescriptorPath: /wdl/Relatedness.wdl
 
-  - name: variant-interpretation
+  - name: RunDeNovoSVs
     subclass: WDL
     primaryDescriptorPath: /wdl/RunDeNovoSVs.wdl
 
-  - name: variant-interpretation
+  - name: DeNovoSVsScatter
     subclass: WDL
     primaryDescriptorPath: /wdl/DeNovoSVsScatter.wdl
