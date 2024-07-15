@@ -5,3 +5,7 @@
   - name: variant-interpretation
     subclass: WDL
     primaryDescriptorPath: /wdl/RunDeNovoSVs.wdl
+
+  - name: variant-interpretation
+    subclass: WDL
+    primaryDescriptorPath: /wdl/DeNovoSVsScatter.wdl
