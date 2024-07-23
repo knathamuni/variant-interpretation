@@ -12,3 +12,7 @@ workflows:
   - name: DeNovoSVsScatter
     subclass: WDL
     primaryDescriptorPath: /wdl/DeNovoSVsScatter.wdl
+
+  - name: runFamilyFiltering
+    subclass: WDL
+    primaryDescriptorPath: /wdl/runFamilyFiltering.wdl
