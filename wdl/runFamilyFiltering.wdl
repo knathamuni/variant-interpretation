@@ -53,7 +53,6 @@ workflow familyFiltering {
                 variant_interpretation_docker=variant_interpretation_docker,
                 runtime_attr_override = runtime_attr_override_subsetFamily
         }
-
         call SVfamilyFiltering{
             input:
                 family=family,
@@ -71,7 +70,7 @@ workflow familyFiltering {
                 variant_interpretation_docker=variant_interpretation_docker,
                 runtime_attr_override=runtime_attr_override_svFiltering
         }
-
+        
     }
     output{
         Array[File] family_filtered_svs = SVfamilyFiltering.family_filtered_svs
