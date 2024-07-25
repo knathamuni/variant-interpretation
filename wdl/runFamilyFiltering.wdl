@@ -20,6 +20,8 @@ workflow familyFiltering {
         File hpo_db
         File mim_file
 
+        File familyFiltering_rscript_modified
+
         RuntimeAttr? runtime_attr_override_vcfToBed
         RuntimeAttr? runtime_attr_override_getGD
         RuntimeAttr? runtime_attr_override_subsetFamily
@@ -57,6 +59,7 @@ workflow familyFiltering {
             input:
                 family=family,
                 family_vcf=subsetFamilyVCF.vcf_family,
+                familyFiltering_rscript_modified = familyFiltering_rscript_modified,
                 bed_file=vcfToBed.bed_output,
 #                bed_file=bed_file,
                 ped_file=ped_file,
@@ -198,6 +201,7 @@ task subsetFamilyVCF{
 task SVfamilyFiltering{
     input{
         String family
+        File familyFiltering_rscript_modified
         File family_vcf
         File bed_file
         File ped_file
@@ -240,7 +244,7 @@ task SVfamilyFiltering{
             mim_path <- '~{mim_file}'
         " > config.R
 
-        Rscript /scripts/variant-interpretation/scripts/familyFiltering.R \
+        Rscript ~{familyFiltering_rscript_modified} \
             -f ~{family} \
             -g ~{family_vcf} \
             -i ~{bed_file} \
